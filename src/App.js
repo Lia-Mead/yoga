@@ -15,7 +15,6 @@ import HomeScreen from "./components/homeScreen";
 import Header from "./components/header";
 import About from "./components/about";
 import Footer from "./components/footer";
-import Development from "./components/development";
 import AccessibilityStatement from "./components/Terms/accessibilityStatement";
 import Imprint from "./components/Terms/imprint";
 import OpenSource from "./components/Terms/openSource";
@@ -121,23 +120,20 @@ function App() {
                             onScroll={handleScroll}
                         >
                             <Routes>
-                                <Route path="/" element={<HomeScreen />} />
-                                {/* <Route path="/" exact component={HomeScreen} /> */}
-                                {/* <Route
-                                    path="/development"
-                                    component={Development}
-                                />
-                                <Route path="/about" component={About} />
-
                                 <Route
-                                    path="/accessibility-statement"
-                                    component={AccessibilityStatement}
+                                    path="/"
+                                    exact
+                                    element={<HomeScreen />}
                                 />
-                                <Route path="/imprint" component={Imprint} />
+                                <Route path="/imprint" element={<Imprint />} />
                                 <Route
                                     path="/open-source"
-                                    component={OpenSource}
-                                /> */}
+                                    element={<OpenSource />}
+                                />
+                                <Route
+                                    path="/accessibility-statement"
+                                    element={<AccessibilityStatement />}
+                                />
                             </Routes>
 
                             {isScrolled && (
@@ -147,7 +143,7 @@ function App() {
                                         toTop();
                                     }}
                                 >
-                                    top
+                                    {t("button_up")}
                                 </button>
                             )}
                         </main>
