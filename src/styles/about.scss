@@ -10,40 +10,40 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
-    --blue: #007bff;
-    --indigo: #6610f2;
-    --purple: #6f42c1;
-    --pink: #e83e8c;
-    --red: #dc3545;
-    --orange: #fd7e14;
-    --yellow: #00e7ff;
-    --green: #28a745;
-    --teal: #20c997;
-    --cyan: #17a2b8;
-    --white: #fff;
-    --gray: #6c757d;
-    --gray-dark: #343a40;
-    --primary: #00e7ff;
-    --secondary: #6c757d;
-    --success: #28a745;
-    --info: #17a2b8;
-    --warning: #00e7ff;
-    --danger: #dc3545;
-    --light: #f8f9fa;
-    --dark: #343a40;
-    --breakpoint-xs: 0;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-        "Liberation Mono", "Courier New", monospace;
-}
+// :root {
+//     --blue: #007bff;
+//     --indigo: #6610f2;
+//     --purple: #6f42c1;
+//     --pink: #e83e8c;
+//     --red: #dc3545;
+//     --orange: #fd7e14;
+//     --yellow: #00e7ff;
+//     --green: #28a745;
+//     --teal: #20c997;
+//     --cyan: #17a2b8;
+//     --white: #fff;
+//     --gray: #6c757d;
+//     --gray-dark: #343a40;
+//     --primary: #00e7ff;
+//     --secondary: #6c757d;
+//     --success: #28a745;
+//     --info: #17a2b8;
+//     --warning: #00e7ff;
+//     --danger: #dc3545;
+//     --light: #f8f9fa;
+//     --dark: #343a40;
+//     --breakpoint-xs: 0;
+//     --breakpoint-sm: 576px;
+//     --breakpoint-md: 768px;
+//     --breakpoint-lg: 992px;
+//     --breakpoint-xl: 1200px;
+//     --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+//         Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+//         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+//         "Noto Color Emoji";
+//     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+//         "Liberation Mono", "Courier New", monospace;
+// }
 
 *,
 *::before,
@@ -71,18 +71,18 @@ section {
     display: block;
 }
 
-body {
-    margin: 0;
-    font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    text-align: left;
-    background-color: #fff;
-}
+// body {
+//     margin: 0;
+//     font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI",
+//         Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+//         "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+//     font-size: 1rem;
+//     font-weight: 400;
+//     line-height: 1.5;
+//     color: #212529;
+//     text-align: left;
+//     background-color: #fff;
+// }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
     outline: 0 !important;
@@ -474,6 +474,12 @@ mark,
 .mark {
     padding: 0.2em;
     background-color: #fcf8e3;
+}
+
+.custom-shape {
+    clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 30% 100%);
+    background-color: green;
+    height: 200px;
 }
 
 .list-unstyled {
@@ -10482,15 +10488,15 @@ img::-moz-selection {
     font-weight: 700;
 }
 
-.btn-social {
-    height: 2.5rem;
-    width: 2.5rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    border-radius: 100%;
-}
+// .btn-social {
+//     height: 2.5rem;
+//     width: 2.5rem;
+//     display: inline-flex;
+//     align-items: center;
+//     justify-content: center;
+//     padding: 0;
+//     border-radius: 100%;
+// }
 
 #mainNav {
     padding-top: 1rem;
@@ -10740,7 +10746,8 @@ img::-moz-selection {
     color: white;
     border: 7px solid #e9ecef;
     border-radius: 100%;
-    background-color: #00e7ff;
+    background-color: #2ca4aa;
+    // background-color: #00e7ff;
 }
 .timeline > li .timeline-image h4 {
     font-size: 10px;

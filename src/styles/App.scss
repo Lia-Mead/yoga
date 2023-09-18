@@ -9,6 +9,8 @@ body {
     // box-sizing: content-box;
     font-family: "Montserrat", sans-serif;
     // font-family: "Nunito", sans-serif;
+    // white-space: pre-line;
+    // vertical-align: bottom;
 }
 
 #root {
@@ -81,9 +83,9 @@ p {
 .app-logo {
     width: 19vh;
     padding: 22px 7px 7px 7px;
-    margin-left: 22px;
     cursor: pointer;
 }
+
 .slide:hover {
     -webkit-animation: slide all 1.5s linear;
     animation: slide all 1.5s linear;
@@ -401,6 +403,10 @@ p {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    white-space: pre-line;
+    vertical-align: bottom;
+    padding-bottom: 160px;
+
     .about-container {
         display: flex;
         height: 100%;

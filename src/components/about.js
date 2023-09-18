@@ -6,6 +6,9 @@ import { useTranslation } from "react-i18next";
 import "../styles/about.scss";
 
 import Avatar from "../assets/images/liatm.jpg";
+import HeadStand from "../assets/images/headstand.jpg";
+import Ashram from "../assets/images/ashram.jpg";
+import Pada from "../assets/images/padangusta.jpg";
 
 const About = ({ isHebrew }) => {
     const { t } = useTranslation();
@@ -16,12 +19,108 @@ const About = ({ isHebrew }) => {
         <section className="page-section" id="about">
             <div className="container">
                 <div className="text-center">
-                    <h2 className="section-heading text-uppercase">About</h2>
+                    <h2 className="section-heading text-uppercase">
+                        {t("about")}
+                    </h2>
                     <h3 className="section-subheading text-muted">
-                        My Way Into Yoga
+                        {t("about_my_way")}
                     </h3>
                 </div>
                 <ul className="timeline">
+                    <li>
+                        <div className="timeline-image">
+                            <img
+                                className="rounded-circle img-fluid"
+                                src={HeadStand}
+                                alt="head-stand-in-sunset"
+                            />
+                        </div>
+                        <div className="timeline-panel">
+                            <div className="timeline-heading">
+                                <h4>2012 – current</h4>
+                                <h4 className="subheading">
+                                    {t("home_hatha_yoga_instructor")}
+                                </h4>
+                            </div>
+                            <div className="timeline-body">
+                                <p className="text-muted">
+                                    Yoga Teachers Continuing Education Program
+                                    at Amritapuri Ashram, Kerala, India
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li className="timeline-inverted">
+                        <div className="timeline-image">
+                            <img
+                                className="rounded-circle img-fluid"
+                                src={Ashram}
+                                alt="head-stand-in-sunset"
+                            />
+                        </div>
+                        <div className="timeline-panel">
+                            <div className="timeline-heading">
+                                <h4>December 2012</h4>
+                                <h4 className="subheading">
+                                    Yoga Teachers Training in the Ashram
+                                </h4>
+                            </div>
+                            <div className="timeline-body">
+                                <p className="text-muted">
+                                    Yoga Teachers Continuing Education Program
+                                    at Amritapuri Ashram, Kerala, India
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div className="timeline-image">
+                            <img
+                                className="rounded-circle img-fluid"
+                                src={Pada}
+                                alt="standing-pose-leg-to-head"
+                            />
+                        </div>
+                        <div className="timeline-panel">
+                            <div className="timeline-heading">
+                                <h4>2008 – 2009</h4>
+                                <h4 className="subheading">
+                                    Freelance Yoga Teacher at "Yoga Inhale"
+                                </h4>
+                            </div>
+                            <div className="timeline-body">
+                                <p className="text-muted"></p>Instructing
+                                various yoga classes for children and adults
+                            </div>
+                        </div>
+                    </li>
+
+                    <li className="timeline-inverted">
+                        <div className="timeline-image">
+                            <img
+                                className="rounded-circle img-fluid"
+                                src="assets/img/about/2.jpg"
+                                alt=""
+                            />
+                        </div>
+                        <div className="timeline-panel">
+                            <div className="timeline-heading">
+                                <h4>2007 – 2008</h4>
+                                <h4 className="subheading">
+                                    Highschool Yoga Teacher
+                                </h4>
+                            </div>
+                            <div className="timeline-body">
+                                <p className="text-muted">
+                                    Volunteering as Yoga Teacher, Youth Program
+                                    at Highschool Tichon Hadash Tel Aviv
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
                     <li>
                         <div className="timeline-image">
                             <img
@@ -41,79 +140,13 @@ const About = ({ isHebrew }) => {
                                 <p className="text-muted">
                                     Two years and 420 hours Yoga Instructors
                                     program instructed by Dr. Udi Bilu in the
-                                    Kibbutzim Colledge of Education in Tel Aviv,
+                                    Kibbutzim College of Education in Tel Aviv,
                                     Israel
                                 </p>
                             </div>
                         </div>
                     </li>
-                    <li className="timeline-inverted">
-                        <div className="timeline-image">
-                            <img
-                                className="rounded-circle img-fluid"
-                                src="assets/img/about/2.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="timeline-panel">
-                            <div className="timeline-heading">
-                                <h4>2007</h4>
-                                <h4 className="subheading">
-                                    Highschool Yoga Teacher
-                                </h4>
-                            </div>
-                            <div className="timeline-body">
-                                <p className="text-muted">
-                                    Volunteering as Yoga Teacher, Youth Program
-                                    at Highschool Tichon Hadash Tel Aviv
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="timeline-image">
-                            <img
-                                className="rounded-circle img-fluid"
-                                src="assets/img/about/3.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="timeline-panel">
-                            <div className="timeline-heading">
-                                <h4>2008 – 2009</h4>
-                                <h4 className="subheading">
-                                    Freelance Yoga Teacher at "Yoga Inhale"
-                                </h4>
-                            </div>
-                            <div className="timeline-body">
-                                <p className="text-muted"></p>Instructing
-                                various yoga classes for children and adults
-                            </div>
-                        </div>
-                    </li>
-                    <li className="timeline-inverted">
-                        <div className="timeline-image">
-                            <img
-                                className="rounded-circle img-fluid"
-                                src="assets/img/about/4.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="timeline-panel">
-                            <div className="timeline-heading">
-                                <h4>December 2012</h4>
-                                <h4 className="subheading">
-                                    Yoga Teachers Training in the Ashram
-                                </h4>
-                            </div>
-                            <div className="timeline-body">
-                                <p className="text-muted">
-                                    Yoga Teachers Continuing Education Program
-                                    at Amritapuri Ashram, Kerala, India
-                                </p>
-                            </div>
-                        </div>
-                    </li>
+
                     <li className="timeline-inverted">
                         <div className="timeline-image">
                             <h4>
