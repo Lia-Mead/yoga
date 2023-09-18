@@ -17,8 +17,7 @@ const About = ({ isHebrew }) => {
     //   const isHebrew = i18n.language === 'he';
 
     return (
-        // <section className="page-section" id="about" href="#about" name="about">
-        <section className="page-section" id="about" href="#about">
+        <section className="page-section" id="about" href="#about" name="about">
             <div className="container">
                 <div className="text-center">
                     <h2 className="section-heading text-uppercase">

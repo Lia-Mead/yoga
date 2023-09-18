@@ -259,6 +259,11 @@ p {
 
     a {
         background-color: #37353b;
+        cursor: pointer;
+        color: #ffffff;
+        &hover {
+            color: #ffffff;
+        }
     }
 
     @media screen and (max-width: 768px) {

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { withTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 import LanguageSwitch from "../components/LanguageSwitch";
 import { Nav, NavLink } from "../components/navElements";
@@ -14,6 +15,9 @@ const Navbar = ({
     isHebrew,
     toTop,
 }) => {
+    const location = useLocation();
+
+    const isHomePage = location.pathname === "/";
     return (
         <div id="mainNav" className="nav-con">
             <Nav className="nav" role="menu">
@@ -24,12 +28,19 @@ const Navbar = ({
                     className={`nav-menu ${isHebrew ? "rtl-text" : "ltr-text"}`}
                 >
                     {/* <NavLink to="/">{t("nav_home")}</NavLink> */}
-                    <a href="#about">{t("nav_about")}</a>
+                    {/* <a href="#about">{t("nav_about")}</a> */}
+
+                    {isHomePage ? (
+                        <ScrollLink to="about" smooth={true} duration={500}>
+                            {t("about")}
+                        </ScrollLink>
+                    ) : (
+                        <NavLink to="/" smooth={true} duration={500}>
+                            {t("nav_home")}
+                        </NavLink>
+                    )}
 
                     <NavLink to="/contact">{t("nav_contact")}</NavLink>
-                    {/* <NavLink to="/contact" onClick={toTop}>
-                        {t("nav_")}
-                    </NavLink> */}
                 </div>
                 <LanguageSwitch
                     setIsHebrew={setIsHebrew}

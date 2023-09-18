@@ -18,18 +18,9 @@ export const NavLink = styled(Link)`
     // height: 100%;
     cursor: pointer;
     &.active {
-        color: #000000;
+        color: #ffffff;
     }
 `;
-
-// export const NavMenu = styled.div`
-//     display: flex;
-//     align-items: center;
-//     margin-right: -24px;
-//     @media screen and (max-width: 768px) {
-//         display: none;
-//     }
-// `;
 
 export const NavBtn = styled.nav`
     display: flex;
