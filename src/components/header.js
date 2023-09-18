@@ -1,27 +1,27 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-// import NavBar from "./navBar";
+import NavBar from "./navBar";
+// import Nav from "./nav";
 // import BurgerMenu from "./burgerMenu";
 // import LanguageSwitch from '../components/LanguageSwitch';
 // import { useLanguage } from '../components/LanguageContext';
+import HeaderScroll from "./headerScroll";
 
 import close from "../assets/icons/close.svg";
 import burger from "../assets/icons/burger.svg";
-import Logo from "../components/logo";
+// import Logo from "../components/logo";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-export default function Header(
-    {
-        // t,
-        // setIsHebrew,
-        // isHebrew,
-        // setIsGerman,
-        // setIsEnglish,
-        // toTop,
-    }
-) {
+export default function Header({
+    t,
+    setIsHebrew,
+    isHebrew,
+    setIsGerman,
+    setIsEnglish,
+    toTop,
+}) {
     const [burgerOpen, setBurgerOpen] = useState(false);
     const [mQuery, setMQuery] = useState();
     const [screenSize, setScreenSize] = useState(window.innerWidth);
@@ -58,9 +58,19 @@ export default function Header(
         <>
             {/* <header className={`header ${isHebrew ? 'rtl-text' : 'ltr-text'}`}> */}
             <header className="header">
-                <Link to="/">
+                {/* <header id="mainNav" className="header"> */}
+                <HeaderScroll />
+                {/* <Link to="/">
                     <Logo />
-                </Link>
+                </Link> */}
+                <NavBar
+                    t={t}
+                    setIsHebrew={setIsHebrew}
+                    isHebrew={isHebrew}
+                    setIsGerman={setIsGerman}
+                    setIsEnglish={setIsEnglish}
+                    toTop={toTop}
+                />
 
                 {/* <div className="menu-left" role="menu">
                     {screenSize < 900 || mQuery ? (
@@ -111,9 +121,9 @@ export default function Header(
 
 Header.propTypes = {
     t: PropTypes.func.isRequired,
-    // setIsHebrew: PropTypes.func.isRequired,
-    // setIsGerman: PropTypes.func.isRequired,
-    // setIsEnglish: PropTypes.func.isRequired,
-    // toTop: PropTypes.func,
-    // isHebrew: PropTypes.bool.isRequired,
+    setIsHebrew: PropTypes.func.isRequired,
+    setIsGerman: PropTypes.func.isRequired,
+    setIsEnglish: PropTypes.func.isRequired,
+    toTop: PropTypes.func,
+    isHebrew: PropTypes.bool.isRequired,
 };

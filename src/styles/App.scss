@@ -37,7 +37,7 @@ footer {
     width: 100%;
     height: 100%;
     max-width: 1920px;
-    margin-top: 80px;
+    // margin-top: 80px;
     box-sizing: border-box;
 
     p {
@@ -81,39 +81,47 @@ p {
 }
 
 .app-logo {
-    width: 19vh;
+    width: 17vh;
     padding: 22px 7px 7px 7px;
     cursor: pointer;
 }
 
-.slide:hover {
-    -webkit-animation: slide all 1.5s linear;
-    animation: slide all 1.5s linear;
+.scale:hover {
+    -webkit-animation: scale all 1.5s linear;
+    animation: scale all 1.5s linear;
     transition: all 1.5s linear;
-    transform: translateX(400px);
+    transform: scale(80%);
 }
 
-@-webkit-keyframes slide {
+@-webkit-keyframes scale {
     from {
-        -webkit-transform: translateX(200px);
-        transform: translateX(4400px);
+        -webkit-transform: scale(80%);
+        transform: scale(80%);
     }
     to {
-        -webkit-transform: translateX(0px);
-        transform: translateX(0px);
+        -webkit-transform: scale(100%);
+        transform: scale(100%);
     }
 }
 
-@keyframes slide {
+@keyframes scale {
     from {
-        -webkit-transform: translateX(200px);
-        transform: translateX(200px);
+        -webkit-transform: scale(80%);
+        transform: scale(80%);
     }
     to {
-        -webkit-transform: translateX(0px);
-        transform: translateX(0px);
+        -webkit-transform: scale(100%);
+        transform: scale(100%);
     }
 }
+//    from {
+//         -webkit-transform: translateX(200px);
+//         transform: translateX(200px);
+//     }
+//     to {
+//         -webkit-transform: translateX(0px);
+//         transform: translateX(0px);
+//     }
 
 .con,
 .box {
@@ -220,6 +228,7 @@ p {
     align-items: center;
     border: 1px solid #261e1e;
     z-index: 3000;
+    font-size: 0.75rem;
 }
 
 .text-box {
@@ -229,19 +238,14 @@ p {
 .header {
     display: flex;
     flex-direction: row;
-    // background-color: #150202;
-    background-color: #201f1f;
     align-items: center;
-    // justify-content: space-between;
     justify-content: center;
     flex: 1 0 auto;
     flex-flow: wrap;
-    height: 80px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 3000;
-    box-shadow: 6px 0px 6px 0px rgb(61 53 53 / 24%);
 }
 
 .nav {
@@ -251,6 +255,12 @@ p {
 .nav-menu {
     display: flex;
     align-items: center;
+    height: 100%;
+
+    a {
+        background-color: #37353b;
+    }
+
     @media screen and (max-width: 768px) {
         display: none;
     }
@@ -258,17 +268,17 @@ p {
 
 .lang-btn {
     border-radius: 4px;
-    padding: 10px;
-    color: #000000;
+    color: #ffffff;
     outline: none;
-    border: 1px black;
+    border: none;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
+    background-color: transparent;
 
     &:hover {
         transition: all 0.2s ease-in-out;
         background: #fff;
-        color: #808080;
+        color: #212529;
     }
 }
 
@@ -345,7 +355,8 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20%;
+    // width: 20%;
+    margin: 0 20px;
 }
 
 .open-nav {

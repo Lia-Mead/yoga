@@ -21,7 +21,7 @@ const HomeScreen = ({ toTop }) => {
                 className="stage background-image"
                 style={{ backgroundImage: `url(${backgroundImageStage})` }}
             >
-                <div className="">
+                <div className="opening-text-con">
                     {/* <h1>{t("brand_name")}</h1> */}
                     <h1>{t("home_yoga")}</h1>
                     <h3>{t("yoga_classes_and_retreats")}</h3>

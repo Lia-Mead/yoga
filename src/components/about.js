@@ -9,6 +9,7 @@ import Avatar from "../assets/images/liatm.jpg";
 import HeadStand from "../assets/images/headstand.jpg";
 import Ashram from "../assets/images/ashram.jpg";
 import Pada from "../assets/images/padangusta.jpg";
+import Tichon from "../assets/images/tichon7.jpg";
 
 const About = ({ isHebrew }) => {
     const { t } = useTranslation();
@@ -16,7 +17,8 @@ const About = ({ isHebrew }) => {
     //   const isHebrew = i18n.language === 'he';
 
     return (
-        <section className="page-section" id="about">
+        // <section className="page-section" id="about" href="#about" name="about">
+        <section className="page-section" id="about" href="#about">
             <div className="container">
                 <div className="text-center">
                     <h2 className="section-heading text-uppercase">
@@ -44,8 +46,8 @@ const About = ({ isHebrew }) => {
                             </div>
                             <div className="timeline-body">
                                 <p className="text-muted">
-                                    Yoga Teachers Continuing Education Program
-                                    at Amritapuri Ashram, Kerala, India
+                                    Yoga Teacher. Instructing individuals and
+                                    groups
                                 </p>
                             </div>
                         </div>
@@ -91,8 +93,11 @@ const About = ({ isHebrew }) => {
                                 </h4>
                             </div>
                             <div className="timeline-body">
-                                <p className="text-muted"></p>Instructing
-                                various yoga classes for children and adults
+                                <p className="text-muted">
+                                    Instructing various yoga classes for
+                                    children and adults. Workshops and retreats
+                                    facilitator.
+                                </p>
                             </div>
                         </div>
                     </li>
@@ -101,8 +106,8 @@ const About = ({ isHebrew }) => {
                         <div className="timeline-image">
                             <img
                                 className="rounded-circle img-fluid"
-                                src="assets/img/about/2.jpg"
-                                alt=""
+                                src={Tichon}
+                                alt="youth-in-tichon-hadash-practicing-yoga"
                             />
                         </div>
                         <div className="timeline-panel">
@@ -114,8 +119,9 @@ const About = ({ isHebrew }) => {
                             </div>
                             <div className="timeline-body">
                                 <p className="text-muted">
-                                    Volunteering as Yoga Teacher, Youth Program
-                                    at Highschool Tichon Hadash Tel Aviv
+                                    Volunteering as a Yoga Teacher, Youth
+                                    Program at Highschool Tichon Hadash, Tel
+                                    Aviv
                                 </p>
                             </div>
                         </div>
@@ -139,9 +145,10 @@ const About = ({ isHebrew }) => {
                             <div className="timeline-body">
                                 <p className="text-muted">
                                     Two years and 420 hours Yoga Instructors
-                                    program instructed by Dr. Udi Bilu in the
-                                    Kibbutzim College of Education in Tel Aviv,
-                                    Israel
+                                    program at the Kibbutzim College in Tel
+                                    Aviv, Israel. Instructed by Dr. Udi Bilu
+                                    Disciple of Dr. Shri Brahma Gopal Bhaduri
+                                    from Varanasi, India.
                                 </p>
                             </div>
                         </div>
@@ -161,129 +168,6 @@ const About = ({ isHebrew }) => {
                 </ul>
             </div>
         </section>
-        // <section classNameName="page-section" id="about">
-        //     <div
-        //         classNameName={`about-container ${
-        //             isHebrew ? "rtl-text" : "ltr-text"
-        //         }`}
-        //     >
-        //         <div classNameName="text-center">
-        //             <h2 classNameName="section-heading">{t("about_title")}</h2>
-        //             <h3 classNameName="section-subheading text-muted">
-        //                 {t("about_my_way")}
-        //             </h3>
-        //         </div>
-        //         <ul classNameName="timeline">
-        //             <li>
-        //                 <div classNameName="timeline-image">
-        //                     <img
-        //                         classNameName="rounded-circle img-fluid"
-        //                         src="assets/img/about/1.jpg"
-        //                         alt=""
-        //                     />
-        //                     <div classNameName={"rounded-circle"}>
-        //                         <img
-        //                             classNameName="rounded-circle"
-        //                             src={Avatar}
-        //                             alt="liat-meadows"
-        //                         />
-        //                     </div>
-        //                 </div>
-        //                 <div classNameName="timeline-panel">
-        //                     <div classNameName="timeline-heading">
-        //                         <h4>2006-2007</h4>
-        //                         <h4 classNameName="subheading">
-        //                             Qualified Yoga Instructor
-        //                         </h4>
-        //                     </div>
-        //                     <div classNameName="timeline-body">
-        //                         <p classNameName="text-muted">
-        //                             {t("about_para_1_1_1")}
-        //                         </p>
-        //                     </div>
-        //                 </div>
-        //             </li>
-        //             <li classNameName="timeline-inverted">
-        //                 <div classNameName="timeline-image">
-        //                     <img
-        //                         classNameName="rounded-circle img-fluid"
-        //                         src="assets/img/about/2.jpg"
-        //                         alt=""
-        //                     />
-        //                 </div>
-        //                 <div classNameName="timeline-panel">
-        //                     <div classNameName="timeline-heading">
-        //                         <h4>2007</h4>
-        //                         <h4 classNameName="subheading">
-        //                             Highschool Yoga Teacher
-        //                         </h4>
-        //                     </div>
-        //                     <div classNameName="timeline-body">
-        //                         <p classNameName="text-muted">
-        //                             Volunteering as Yoga Teacher, Youth Program
-        //                             at Highschool Tichon Hadash Tel Aviv
-        //                         </p>
-        //                     </div>
-        //                 </div>
-        //             </li>
-        //             <li>
-        //                 <div classNameName="timeline-image">
-        //                     <img
-        //                         classNameName="rounded-circle img-fluid"
-        //                         src="assets/img/about/3.jpg"
-        //                         alt=""
-        //                     />
-        //                 </div>
-        //                 <div classNameName="timeline-panel">
-        //                     <div classNameName="timeline-heading">
-        //                         <h4>2008 – 2009</h4>
-        //                         <h4 classNameName="subheading">
-        //                             Freelance Yoga Teacher at "Yoga Inhale"
-        //                         </h4>
-        //                     </div>
-        //                     <div classNameName="timeline-body">
-        //                         <p classNameName="text-muted"></p>Instructing
-        //                         various yoga classNameNamees for children and adults
-        //                     </div>
-        //                 </div>
-        //             </li>
-        //             <li classNameName="timeline-inverted">
-        //                 <div classNameName="timeline-image">
-        //                     <img
-        //                         classNameName="rounded-circle img-fluid"
-        //                         src="assets/img/about/4.jpg"
-        //                         alt=""
-        //                     />
-        //                 </div>
-        //                 <div classNameName="timeline-panel">
-        //                     <div classNameName="timeline-heading">
-        //                         <h4>December 2012</h4>
-        //                         <h4 classNameName="subheading">
-        //                             Yoga Teachers Training in the Ashram
-        //                         </h4>
-        //                     </div>
-        //                     <div classNameName="timeline-body">
-        //                         <p classNameName="text-muted">
-        //                             Yoga Teachers Continuing Education Program
-        //                             at Amritapuri Ashram, Kerala, India
-        //                         </p>
-        //                     </div>
-        //                 </div>
-        //             </li>
-        //             <li classNameName="timeline-inverted">
-        //                 <div classNameName="timeline-image">
-        //                     <h4>
-        //                         Be Part
-        //                         <br />
-        //                         Raise Your
-        //                         <br />
-        //                         Vibration!
-        //                     </h4>
-        //                 </div>
-        //             </li>
-        //         </ul>
-        //     </div>
-        // </section>
     );
 };
 

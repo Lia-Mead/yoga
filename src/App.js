@@ -19,6 +19,7 @@ import AccessibilityStatement from "./components/Terms/accessibilityStatement";
 import Imprint from "./components/Terms/imprint";
 import OpenSource from "./components/Terms/openSource";
 import "./styles/App.scss";
+// import backgroundImageStage from "./assets/images/header-bg.jpg";
 
 function App() {
     const { t } = useTranslation();
@@ -103,7 +104,14 @@ function App() {
             <LanguageProvider>
                 <Router>
                     <ScrollToTop />
-                    <div className="wrapper">
+                    <div
+                        className="wrapper"
+                        style={
+                            {
+                                // backgroundImage: `url(${backgroundImageStage})`,
+                            }
+                        }
+                    >
                         <Header
                             t={t}
                             isHebrew={isHebrew}
