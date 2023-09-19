@@ -74,7 +74,7 @@ export default function Header({
 
                 {screenSize < 900 || mQuery ? (
                     <div className="responsive-nav-con">
-                        <Link to="/">
+                        <Link to="/" onClick={toTop}>
                             <Logo />
                         </Link>
                         <img
@@ -127,6 +127,6 @@ Header.propTypes = {
     setIsHebrew: PropTypes.func.isRequired,
     setIsGerman: PropTypes.func.isRequired,
     setIsEnglish: PropTypes.func.isRequired,
-    toTop: PropTypes.func,
+    toTop: PropTypes.func.isRequired,
     isHebrew: PropTypes.bool.isRequired,
 };

@@ -10,7 +10,14 @@ import Logo from "../components/logo";
 
 import "../styles/navBar.scss";
 
-const Navbar = ({ t, setIsHebrew, setIsEnglish, setIsGerman, isHebrew }) => {
+const Navbar = ({
+    t,
+    toTop,
+    setIsHebrew,
+    setIsEnglish,
+    setIsGerman,
+    isHebrew,
+}) => {
     const location = useLocation();
 
     const isHomePage = location.pathname === "/";
@@ -21,7 +28,7 @@ const Navbar = ({ t, setIsHebrew, setIsEnglish, setIsGerman, isHebrew }) => {
                 className="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink"
                 role="menu"
             >
-                <Link to="/">
+                <Link to="/" onClick={toTop}>
                     <Logo />
                 </Link>
 
@@ -53,6 +60,7 @@ const Navbar = ({ t, setIsHebrew, setIsEnglish, setIsGerman, isHebrew }) => {
 
 Navbar.propTypes = {
     t: PropTypes.func.isRequired,
+    toTop: PropTypes.func.isRequired,
     setIsHebrew: PropTypes.func,
     setIsEnglish: PropTypes.func,
     setIsGerman: PropTypes.func,
