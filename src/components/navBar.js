@@ -29,11 +29,11 @@ const Navbar = ({ t, setIsHebrew, setIsEnglish, setIsGerman, isHebrew }) => {
                     className={`nav-menu ${isHebrew ? "rtl-text" : "ltr-text"}`}
                 >
                     {isHomePage ? (
-                        <ScrollLink to="about" smooth={true} duration={500}>
+                        <ScrollLink to="about" smooth="true" duration={500}>
                             {t("nav_about")}
                         </ScrollLink>
                     ) : (
-                        <NavLink to="/" smooth={true} duration={500}>
+                        <NavLink to="/" smooth="true" duration={500}>
                             {t("nav_home")}
                         </NavLink>
                     )}

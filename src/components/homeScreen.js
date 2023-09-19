@@ -10,6 +10,7 @@ import "../styles/homeScreen.scss";
 const HomeScreen = ({ toTop }) => {
     const { t, i18n } = useTranslation();
     const isHebrew = i18n.language === "he";
+    const isGerman = i18n.language === "de";
 
     return (
         <div
@@ -35,7 +36,12 @@ const HomeScreen = ({ toTop }) => {
                 <h3 className="animate-character">{t("home_slogan")}</h3>
             </div>
 
-            <About t={t} isHebrew={isHebrew} onClick={toTop} />
+            <About
+                t={t}
+                isHebrew={isHebrew}
+                isGerman={isGerman}
+                onClick={toTop}
+            />
         </div>
     );
 };

@@ -1,9 +1,12 @@
 {
     "about": "Über mich",
     "home_slogan": "Üben Sie in Ihrem eigenen Tempo",
-    "home_slogan2": "Das ist, was ich tue.",
-    "development_and_design": "Web-Entwicklung & Design",
+    "brand_name": "Yogi Space",
     "liat_meadows": "Liat Meadows",
+    "home_yoga": "Hatha Vinyasa Flow\n",
+    "with_liat": "mit Liat",
+    "yoga_classes_and_retreats": "Yoga Unterrichten und Retreats",
+    "home_hatha_yoga_instructor": "Hatha Vinyasa\nYoga Lehrerin",
     "button_up": "oben",
     "nav_home": "home",
     "nav_about": "über",
@@ -33,6 +36,8 @@
     "footer_imprint": "Impressum",
     "footer_accessibility": "Barrierefreiheit",
     "footer_open_source": "Open Source",
+    "footer_made_with_love": "© hergestellt mit ♡ bei Liat Meadows 2023",
+
     "accessibility_statement_title": "Erklärung zur Barrierefreiheit",
     "accessibility_statement_text_1": "Wir befürworten die Barrierefreiheit der Website zum Nutzen aller Surfer.",
     "accessibility_statement_text_2": "Ich würde mich über Kommentare und Anfragen zur E-Mail-Erreichbarkeit freuen.",

@@ -1,8 +1,12 @@
 {
     "about": "אודות",
     "home_slogan": "אימון בקצב שלך",
-    "development_and_design": "עיצוב ובניית אתרים",
+    "brand_name": "יוגי ספייס",
+    "home_yoga": "זרימה של האטה ויניאסה\n",
+    "with_liat": "עם ליאת",
+    "yoga_classes_and_retreats": "שיעורי יוגה וריטריטים",
     "liat_meadows": "ליאת מדואס",
+    "home_hatha_yoga_instructor": "מדריכת יוגה האטה ויניאסה",
     "button_up": "למעלה",
     "nav_home": "ראשי",
     "nav_about": "אודות",
@@ -31,6 +35,8 @@
 
     "footer_imprint": "מדיניות פרטיות",
     "footer_accessibility": "נגישות באתר",
+    "footer_made_with_love": "© אתר זה נעשה ב- ♡ ליאת מדואס 2023",
+
     "accessibility_statement_title": "הצהרת נגישות",
     "accessibility_statement_text_1": "אנו דוגלים בנגישות אתרים לנוחות כלל הגולשים.",
     "accessibility_statement_text_2": "אשמח לקבל הערות ובקשות בנושא נגישות למייל.",

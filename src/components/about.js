@@ -11,7 +11,7 @@ import Ashram from "../assets/images/ashram.jpg";
 import Pada from "../assets/images/padangusta.jpg";
 import Tichon from "../assets/images/tichon7.jpg";
 
-const About = ({ isHebrew }) => {
+const About = ({ isHebrew, isGerman }) => {
     const { t } = useTranslation();
 
     //   const isHebrew = i18n.language === 'he';
@@ -145,8 +145,8 @@ const About = ({ isHebrew }) => {
 
                     <li className="timeline-inverted">
                         <div className="timeline-image">
-                            <h4>
-                                {t("about_be_part")}
+                            <h4 className={!isGerman ? "no-margin" : ""}>
+                                {isGerman && t("about_be_part")}
                                 <br />
                                 {t("about_raise_your")}
                                 <br />
@@ -163,6 +163,7 @@ const About = ({ isHebrew }) => {
 About.propTypes = {
     t: PropTypes.func.isRequired,
     isHebrew: PropTypes.bool,
+    isGerman: PropTypes.bool,
 };
 
 export default withTranslation()(About);
