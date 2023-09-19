@@ -145,8 +145,8 @@ const About = ({ isHebrew, isGerman }) => {
 
                     <li className="timeline-inverted">
                         <div className="timeline-image">
-                            <h4 className={!isGerman ? "no-margin" : ""}>
-                                {isGerman && t("about_be_part")}
+                            <h4 className={isGerman ? "no-margin" : ""}>
+                                {!isGerman && t("about_be_part")}
                                 <br />
                                 {t("about_raise_your")}
                                 <br />
