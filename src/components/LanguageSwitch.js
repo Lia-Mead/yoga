@@ -21,7 +21,7 @@ const LanguageSwitch = ({ setIsHebrew, setIsEnglish, setIsGerman }) => {
 
             const saveLanguageToLocalStorage = (language) => {
                 localStorage.setItem("selectedLanguage", language);
-                // console.log('newlang in local storage', language);
+                console.log("newlang in local storage", language);
             };
 
             saveLanguageToLocalStorage(newLanguage);
@@ -48,7 +48,7 @@ const LanguageSwitch = ({ setIsHebrew, setIsEnglish, setIsGerman }) => {
     }, [handleLanguageChange, i18n, setIsHebrewCallback]);
 
     return (
-        <div className="lang-box">
+        <div className="nav-menu lang-box">
             <button
                 className="lang-btn"
                 onClick={() => {
@@ -59,7 +59,7 @@ const LanguageSwitch = ({ setIsHebrew, setIsEnglish, setIsGerman }) => {
                     setIsGerman(false);
                 }}
             >
-                English
+                EN
             </button>
             <button
                 className="lang-btn"
@@ -71,7 +71,7 @@ const LanguageSwitch = ({ setIsHebrew, setIsEnglish, setIsGerman }) => {
                     setIsGerman(true);
                 }}
             >
-                Deutsch
+                DE
             </button>
             <button
                 className="lang-btn"
@@ -83,7 +83,7 @@ const LanguageSwitch = ({ setIsHebrew, setIsEnglish, setIsGerman }) => {
                     setIsGerman(false);
                 }}
             >
-                עברית
+                עב
             </button>
         </div>
     );

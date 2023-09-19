@@ -4,35 +4,33 @@ import { Link, useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
 import LanguageSwitch from "../components/LanguageSwitch";
+
 import { Nav, NavLink } from "../components/navElements";
 import Logo from "../components/logo";
 
-const Navbar = ({
-    t,
-    setIsHebrew,
-    setIsEnglish,
-    setIsGerman,
-    isHebrew,
-    toTop,
-}) => {
+import "../styles/navBar.scss";
+
+const Navbar = ({ t, setIsHebrew, setIsEnglish, setIsGerman, isHebrew }) => {
     const location = useLocation();
 
     const isHomePage = location.pathname === "/";
+
     return (
         <div id="mainNav" className="nav-con">
-            <Nav className="nav" role="menu">
+            <Nav
+                className="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink"
+                role="menu"
+            >
                 <Link to="/">
                     <Logo />
                 </Link>
+
                 <div
                     className={`nav-menu ${isHebrew ? "rtl-text" : "ltr-text"}`}
                 >
-                    {/* <NavLink to="/">{t("nav_home")}</NavLink> */}
-                    {/* <a href="#about">{t("nav_about")}</a> */}
-
                     {isHomePage ? (
                         <ScrollLink to="about" smooth={true} duration={500}>
-                            {t("about")}
+                            {t("nav_about")}
                         </ScrollLink>
                     ) : (
                         <NavLink to="/" smooth={true} duration={500}>
@@ -42,6 +40,7 @@ const Navbar = ({
 
                     <NavLink to="/contact">{t("nav_contact")}</NavLink>
                 </div>
+
                 <LanguageSwitch
                     setIsHebrew={setIsHebrew}
                     setIsGerman={setIsGerman}
@@ -57,7 +56,6 @@ Navbar.propTypes = {
     setIsHebrew: PropTypes.func,
     setIsEnglish: PropTypes.func,
     setIsGerman: PropTypes.func,
-    toTop: PropTypes.func,
     isHebrew: PropTypes.bool,
 };
 

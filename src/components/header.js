@@ -1,19 +1,17 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import NavBar from "./navBar";
 // import Nav from "./nav";
-// import BurgerMenu from "./burgerMenu";
+import BurgerMenu from "./burgerMenu";
 // import LanguageSwitch from '../components/LanguageSwitch';
 // import { useLanguage } from '../components/LanguageContext';
 import HeaderScroll from "./headerScroll";
 
 import close from "../assets/icons/close.svg";
 import burger from "../assets/icons/burger.svg";
-// import Logo from "../components/logo";
-
-// import { Link } from "react-router-dom";
-// import { Link } from "react-scroll";
+import Logo from "../components/logo";
 
 export default function Header({
     t,
@@ -32,9 +30,10 @@ export default function Header({
         setMQuery(mql.matches);
     };
 
-    // const toggleBurgerMenu = () => {
-    //     setBurgerOpen(!burgerOpen);
-    // };
+    const toggleBurgerMenu = () => {
+        console.log("burgerOpen");
+        setBurgerOpen(!burgerOpen);
+    };
 
     let src;
     burgerOpen ? (src = close) : (src = burger);
@@ -43,6 +42,7 @@ export default function Header({
         if (screenSize < 900) {
             console.log("screenSize", screenSize);
             setBurgerOpen(false);
+            // add class justify-content: space-between; header
         }
     }, [screenSize]);
 
@@ -51,35 +51,37 @@ export default function Header({
         setScreenSize(window.innerWidth);
     }, []);
 
-    // useEffect(() => {
-    //   console.log('isHebrew', isHebrew);
-    // }, [isHebrew]);
-
     return (
         <>
             {/* <header className={`header ${isHebrew ? 'rtl-text' : 'ltr-text'}`}> */}
             <header className="header">
                 {/* <header id="mainNav" className="header"> */}
                 <HeaderScroll />
-                {/* <Link to="/">
-                    <Logo />
-                </Link> */}
-                <NavBar
+
+                {/* <NavBar
                     t={t}
                     setIsHebrew={setIsHebrew}
                     isHebrew={isHebrew}
                     setIsGerman={setIsGerman}
                     setIsEnglish={setIsEnglish}
                     toTop={toTop}
-                />
+                    toggleBurgerMenu={toggleBurgerMenu}
+                    burgerOpen={burgerOpen}
+                    setBurgerOpen={setBurgerOpen}
+                /> */}
 
-                {/* <div className="menu-left" role="menu">
-                    {screenSize < 900 || mQuery ? (
+                {/* <div className="menu-left" role="menu"> */}
+
+                {screenSize < 900 || mQuery ? (
+                    <div className="responsive-nav-con">
+                        <Link to="/">
+                            <Logo />
+                        </Link>
                         <img
                             onClick={toggleBurgerMenu}
                             className="navbar-icon"
                             src={src}
-                            alt="menu-burger"
+                            alt="responsive-menu-button"
                             onKeyDown={(e) => {
                                 if (e.key === "Enter" || e.key === " ") {
                                     toggleBurgerMenu();
@@ -90,32 +92,32 @@ export default function Header({
                             aria-labelledby="menubutton"
                             tabIndex="0"
                         />
-                    ) : (
-                        <NavBar
-                            t={t}
-                            setIsHebrew={setIsHebrew}
-                            isHebrew={isHebrew}
-                            setIsGerman={setIsGerman}
-                            setIsEnglish={setIsEnglish}
-                            toTop={toTop}
-                        />
-                    )}
-                </div> */}
+                    </div>
+                ) : (
+                    <NavBar
+                        t={t}
+                        setIsHebrew={setIsHebrew}
+                        isHebrew={isHebrew}
+                        setIsGerman={setIsGerman}
+                        setIsEnglish={setIsEnglish}
+                        toTop={toTop}
+                    />
+                )}
+                {/* </div> */}
             </header>
 
-            {/* {burgerOpen ? (
+            {burgerOpen ? (
                 <BurgerMenu
                     t={t}
                     toggleBurgerMenu={toggleBurgerMenu}
                     burgerOpen={burgerOpen}
-                    setBurgerOpen={setBurgerOpen}
                     setIsHebrew={setIsHebrew}
                     setIsGerman={setIsGerman}
                     setIsEnglish={setIsEnglish}
                     isHebrew={isHebrew}
                     toTop={toTop}
                 />
-            ) : null} */}
+            ) : null}
         </>
     );
 }

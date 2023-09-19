@@ -6,12 +6,6 @@
         min-height: 800px;
         text-align: center;
 
-        // .square {
-        //     height: 50px;
-        //     width: 50px;
-        //     background-color: #555;
-        // }
-
         .opening-text-con {
             margin-top: 80px;
         }
@@ -41,6 +35,7 @@
     .background-image {
         background-size: cover;
         background-repeat: no-repeat;
+        background-position: center;
         width: 100%;
         height: 100%;
     }
@@ -59,7 +54,7 @@
                 -225deg,
                 #00e8ff 0%,
                 #7abf2b 29%,
-                #474993 67%,
+                #9598ff 67%,
                 #87f293 100%
             );
             background-size: auto auto;
@@ -73,10 +68,8 @@
             -webkit-text-fill-color: transparent;
             animation: textclip 5s linear;
             display: inline-block;
-            // font-size: 90px;
             font-size: 4rem;
             font-weight: 500;
-            // font-family: "Bebas Neue", sans-serif;
             font-family: "Montserrat", sans-serif;
             padding: 40px;
             &:hover {
@@ -98,6 +91,14 @@
             font-size: 2rem !important;
             line-height: 1.5;
             margin-top: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .con.home {
+        .stage h3 {
+            margin-top: 210px;
         }
     }
 }

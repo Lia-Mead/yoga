@@ -18,7 +18,7 @@ const About = ({ isHebrew }) => {
 
     return (
         <section className="page-section" id="about" href="#about" name="about">
-            <div className="container">
+            <div className={`container ${isHebrew ? "rtl-text" : "ltr-text"}`}>
                 <div className="text-center">
                     <h2 className="section-heading text-uppercase">
                         {t("about")}
@@ -38,15 +38,14 @@ const About = ({ isHebrew }) => {
                         </div>
                         <div className="timeline-panel">
                             <div className="timeline-heading">
-                                <h4>2012 – current</h4>
+                                <h4>{t("about_para_1_years")}</h4>
                                 <h4 className="subheading">
-                                    {t("home_hatha_yoga_instructor")}
+                                    {t("about_para_1_title")}
                                 </h4>
                             </div>
                             <div className="timeline-body">
                                 <p className="text-muted">
-                                    Yoga Teacher. Instructing individuals and
-                                    groups
+                                    {t("about_para_1")}
                                 </p>
                             </div>
                         </div>
@@ -62,15 +61,14 @@ const About = ({ isHebrew }) => {
                         </div>
                         <div className="timeline-panel">
                             <div className="timeline-heading">
-                                <h4>December 2012</h4>
+                                <h4>{t("about_para_2_years")}</h4>
                                 <h4 className="subheading">
-                                    Yoga Teachers Training in the Ashram
+                                    {t("about_para_2_title")}
                                 </h4>
                             </div>
                             <div className="timeline-body">
                                 <p className="text-muted">
-                                    Yoga Teachers Continuing Education Program
-                                    at Amritapuri Ashram, Kerala, India
+                                    {t("about_para_2")}
                                 </p>
                             </div>
                         </div>
@@ -86,16 +84,14 @@ const About = ({ isHebrew }) => {
                         </div>
                         <div className="timeline-panel">
                             <div className="timeline-heading">
-                                <h4>2008 – 2009</h4>
+                                <h4>{t("about_para_3_years")}</h4>
                                 <h4 className="subheading">
-                                    Freelance Yoga Teacher at "Yoga Inhale"
+                                    {t("about_para_3_title")}
                                 </h4>
                             </div>
                             <div className="timeline-body">
                                 <p className="text-muted">
-                                    Instructing various yoga classes for
-                                    children and adults. Workshops and retreats
-                                    facilitator.
+                                    {t("about_para_3")}
                                 </p>
                             </div>
                         </div>
@@ -111,16 +107,14 @@ const About = ({ isHebrew }) => {
                         </div>
                         <div className="timeline-panel">
                             <div className="timeline-heading">
-                                <h4>2007 – 2008</h4>
+                                <h4>{t("about_para_4_years")}</h4>
                                 <h4 className="subheading">
-                                    Highschool Yoga Teacher
+                                    {t("about_para_4_title")}
                                 </h4>
                             </div>
                             <div className="timeline-body">
                                 <p className="text-muted">
-                                    Volunteering as a Yoga Teacher, Youth
-                                    Program at Highschool Tichon Hadash, Tel
-                                    Aviv
+                                    {t("about_para_4")}
                                 </p>
                             </div>
                         </div>
@@ -136,18 +130,14 @@ const About = ({ isHebrew }) => {
                         </div>
                         <div className="timeline-panel">
                             <div className="timeline-heading">
-                                <h4>2006-2007</h4>
+                                <h4>{t("about_para_5_years")}</h4>
                                 <h4 className="subheading">
-                                    Qualified Yoga Instructor
+                                    {t("about_para_5_title")}
                                 </h4>
                             </div>
                             <div className="timeline-body">
                                 <p className="text-muted">
-                                    Two years and 420 hours Yoga Instructors
-                                    program at the Kibbutzim College in Tel
-                                    Aviv, Israel. Instructed by Dr. Udi Bilu
-                                    Disciple of Dr. Shri Brahma Gopal Bhaduri
-                                    from Varanasi, India.
+                                    {t("about_para_5")}
                                 </p>
                             </div>
                         </div>
@@ -156,11 +146,11 @@ const About = ({ isHebrew }) => {
                     <li className="timeline-inverted">
                         <div className="timeline-image">
                             <h4>
-                                Be Part
+                                {t("about_be_part")}
                                 <br />
-                                Raise Your
+                                {t("about_raise_your")}
                                 <br />
-                                Vibration!
+                                {t("about_vibration")}
                             </h4>
                         </div>
                     </li>

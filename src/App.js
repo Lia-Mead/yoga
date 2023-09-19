@@ -13,7 +13,8 @@ import ScrollToTop from "./components/scrollToTop";
 
 import HomeScreen from "./components/homeScreen";
 import Header from "./components/header";
-import About from "./components/about";
+import Contact from "./components/contact";
+// import About from "./components/about";
 import Footer from "./components/footer";
 import AccessibilityStatement from "./components/Terms/accessibilityStatement";
 import Imprint from "./components/Terms/imprint";
@@ -104,14 +105,7 @@ function App() {
             <LanguageProvider>
                 <Router>
                     <ScrollToTop />
-                    <div
-                        className="wrapper"
-                        style={
-                            {
-                                // backgroundImage: `url(${backgroundImageStage})`,
-                            }
-                        }
-                    >
+                    <div className="wrapper">
                         <Header
                             t={t}
                             isHebrew={isHebrew}
@@ -133,6 +127,7 @@ function App() {
                                     exact
                                     element={<HomeScreen />}
                                 />
+                                <Route path="/contact" element={<Contact />} />
                                 <Route path="/imprint" element={<Imprint />} />
                                 <Route
                                     path="/open-source"

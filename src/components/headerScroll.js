@@ -50,7 +50,9 @@ function HeaderScroll() {
         collapseElements.forEach((element) => {
             element.addEventListener("click", () => {
                 const navbar = document.querySelector(".navbar-collapse");
-                navbar.classList.remove("show");
+                if (navbar) {
+                    navbar.classList.remove("show");
+                }
             });
         });
 
@@ -59,7 +61,7 @@ function HeaderScroll() {
             const navbarItems = document.querySelectorAll(".js-scroll-trigger");
             const offset = 74; // Adjust offset as needed
 
-            navbarItems.forEach((item) => {
+            navbarItems?.forEach((item) => {
                 const targetId = item.getAttribute("href").substring(1);
                 const targetElement = document.querySelector(`#${targetId}`);
                 const bounds = targetElement.getBoundingClientRect();
@@ -77,10 +79,12 @@ function HeaderScroll() {
         const navbarOffset = 100;
 
         const navbarCollapse = () => {
-            if (window.scrollY > navbarOffset) {
-                navbar.classList.add("navbar-shrink");
-            } else {
-                navbar.classList.remove("navbar-shrink");
+            if (navbar) {
+                if (window.scrollY > navbarOffset) {
+                    navbar.classList.add("navbar-shrink");
+                } else {
+                    navbar.classList.remove("navbar-shrink");
+                }
             }
         };
 
@@ -89,7 +93,7 @@ function HeaderScroll() {
         window.addEventListener("scroll", navbarCollapse);
     }, []);
 
-    return <div></div>; // This component doesn't render any visible content
+    return <div></div>;
 }
 
 export default HeaderScroll;
