@@ -33,10 +33,10 @@
     "about_raise_your": "Raise your",
     "about_vibration": "Vibration!",
 
-    "contact_form_first_name": "First name",
-    "contact_form_last_name": "Last name",
+    "contact_form_name": "Name",
     "contact_form_phone_number": "Phone number",
-    "contact_form_first_name_required": "First name is required.",
+    "contact_form_email": "E-mail",
+    "contact_form_name_required": "Name is required.",
     "contact_form_phone_number_required": "Phone number is required.",
 
     "contact_contact_me": "Have a question?\n Want to book a session?",

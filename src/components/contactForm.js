@@ -71,18 +71,25 @@ const ContactForm = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="input-box">
                 <input
-                    placeholder={t("contact_form_first_name")}
-                    {...register("firstName", { required: true })}
+                    placeholder={t("contact_form_name")}
+                    {...register("name", { required: true })}
                 />
-                {errors.firstName && (
-                    <p>{t("contact_form_first_name_required")}</p>
-                )}
+                {errors.name && <p>{t("contact_form_name_required")}</p>}
             </div>
-            <div className="input-box">
+            {/* <div className="input-box">
                 <input
                     placeholder={t("contact_form_last_name")}
                     {...register("lastName")}
                 />
+            </div> */}
+            <div className="input-box">
+                <input
+                    placeholder={t("contact_form_email")}
+                    {...register("email")}
+                />
+                {/* {errors.email && (
+                    <p>{t("contact_form_phone_number_required")}</p>
+                )} */}
             </div>
             <div className="input-box">
                 <input

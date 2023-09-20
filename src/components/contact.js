@@ -11,8 +11,6 @@ import "../styles/contact.scss";
 const Contact = ({ isHebrew }) => {
     const { t } = useTranslation();
 
-    //   const isHebrew = i18n.language === 'he';
-
     return (
         <section
             className="page-section line-break"
