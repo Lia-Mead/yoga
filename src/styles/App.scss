@@ -583,9 +583,6 @@ p {
     .con {
         flex-direction: row;
     }
-    .stage {
-        width: 90%;
-    }
 }
 
 @media screen and (max-width: 850px) {
@@ -597,10 +594,6 @@ p {
         height: 75px;
     }
 
-    // .app-logo {
-    //     padding: 7px 7px 7px 7px;
-    // }
-
     .footer {
         .link-con {
             margin-top: 10px;
@@ -609,8 +602,12 @@ p {
         .icon {
             width: 20%;
         }
-        .footer-box.second {
+        .footer-box.first {
+            padding: 1% 0 4% 0;
+        }
+        .footer-box {
             width: 100%;
+            padding: 3% 0;
         }
     }
 

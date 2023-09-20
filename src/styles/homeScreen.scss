@@ -31,6 +31,11 @@
             width: 30%;
             margin: 20px auto;
         }
+        @media screen and (max-width: 1150px) {
+            .stage {
+                width: 90%;
+            }
+        }
     }
 
     .animate-box {
@@ -90,8 +95,13 @@
 
 @media screen and (max-width: 550px) {
     .con.home {
-        .stage h3 {
-            margin-top: 210px;
+        .stage {
+            h1 {
+                font-size: 2rem;
+            }
+            h3 {
+                margin-top: 210px;
+            }
         }
     }
 }

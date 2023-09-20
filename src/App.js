@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
+
+// import ContactForm from "./ContactForm";
+// import * as emailjs from "emailjs-com";
+// import { useForm } from "react-hook-form";
+
 // import PropTypes from 'prop-types';
 
 // import './nagishli.js';
@@ -31,27 +36,7 @@ function App() {
 
     const [hasScrolledToBottom, setHasScrolledToBottom] = useState(false);
 
-    // const { switchLanguage } = useLanguage();
-
-    // useEffect(() => {
-    //   if (i18n.language === 'he') {
-    //     setIsHebrew(true);
-    //   } else {
-    //     setIsHebrew(false);
-    //   }
-
-    //   // if (i18n.language === 'de') {
-    //   //   setIsGerman(true);
-    //   // } else {
-    //   //   setIsGerman(false);
-    //   // }
-
-    //   // if (i18n.language === 'en') {
-    //   //   setIsEnglish(true);
-    //   // } else {
-    //   //   setIsEnglish(false);
-    //   // }
-    // }, []);
+    // emailjs.init("YOUR_SENDGRID_USER_ID");
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll, { passive: true });
@@ -137,6 +122,7 @@ function App() {
                                     path="/accessibility-statement"
                                     element={<AccessibilityStatement />}
                                 />
+                                {/* <Route path="/contact" component={ContactForm} /> */}
                             </Routes>
 
                             {isScrolled && (
