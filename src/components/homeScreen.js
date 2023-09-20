@@ -16,19 +16,17 @@ const HomeScreen = ({ toTop }) => {
         <div
             id="home"
             className={`con home ${isHebrew ? "rtl-text" : "ltr-text"}`}
-            // style={{ backgroundImage: `url(${backgroundImage})` }}
         >
             <div
                 className="stage background-image"
                 style={{ backgroundImage: `url(${backgroundImageStage})` }}
             >
                 <div className="opening-text-con">
-                    {/* <h1>{t("brand_name")}</h1> */}
-                    <h1>{t("home_yoga")}</h1>
+                    <h1>
+                        {t("home_yoga")}
+                        {t("with_liat")}
+                    </h1>
                     <h3>{t("yoga_classes_and_retreats")}</h3>
-
-                    {/* <h2>{t("home_yoga")}</h2>
-                    <h3>{t("with_liat")}</h3> */}
                 </div>
             </div>
 

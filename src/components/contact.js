@@ -4,9 +4,9 @@ import { withTranslation } from "react-i18next";
 import { useTranslation } from "react-i18next";
 import ContactForm from "./contactForm";
 
-import backgroundImageContact from "../assets/images/header-bg.jpg";
+import backgroundImageContact from "../assets/images/warrier.jpg";
 
-// import "../styles/about.scss";
+import "../styles/contact.scss";
 
 const Contact = ({ isHebrew }) => {
     const { t } = useTranslation();
@@ -15,7 +15,7 @@ const Contact = ({ isHebrew }) => {
 
     return (
         <section
-            className="page-section"
+            className="page-section line-break"
             id="contact"
             href="#contact"
             name="contact"
@@ -40,13 +40,13 @@ const Contact = ({ isHebrew }) => {
                         </p>
                     </h3>
                 </div>
-                <div
-                    className="stage background-image"
-                    style={{
-                        backgroundImage: `url(${backgroundImageContact})`,
-                    }}
-                ></div>
             </div>
+            <div
+                className="form-box background-image"
+                style={{
+                    backgroundImage: `url(${backgroundImageContact})`,
+                }}
+            ></div>
         </section>
     );
 };
