@@ -6,7 +6,11 @@ if(empty($_POST['name'])      ||
    // empty($_POST['message'])   ||
    !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
    {
-   echo "No arguments Provided!";
+   // echo "No arguments Provided!";
+   $post_string = implode("", $_POST);
+   echo "no arg $post_string"
+
+
    return false;
    }
    
