@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    // color: #2c3e50;
+    color: #2c3e50;
     background-color: #f6f6f0;
     box-sizing: border-box;
     // box-sizing: content-box;
@@ -508,8 +508,7 @@ p {
 .open-nav {
     position: fixed;
     width: 40%;
-    // background-color: #212529;
-    background-color: #2d2d2d;
+    background-color: #212529;
     right: 0;
     top: 79px;
     z-index: 300;
@@ -525,8 +524,7 @@ p {
         align-items: flex-start;
     }
     a {
-        // color: #f8f6f5;
-        color: #ffffff;
+        color: #f8f6f5;
         padding: 1rem 2rem;
         letter-spacing: 0.0625em;
         text-transform: uppercase;
