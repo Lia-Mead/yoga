@@ -2,7 +2,7 @@
 import PropTypes from "prop-types";
 import { withTranslation } from "react-i18next";
 import { useTranslation } from "react-i18next";
-import ContactForm from "./contactForm";
+// import ContactForm from "./contactForm";
 
 import backgroundImageContact from "../assets/images/warrier.jpg";
 
@@ -29,7 +29,7 @@ const Contact = ({ isHebrew }) => {
                     </h1>
 
                     <h2>{t("contact_contact_me")}</h2>
-                    <ContactForm />
+                    {/* <ContactForm /> */}
                     <h3 className="section-subheading ">
                         <p>
                             <a href="mailto:liatyoga@gmail.com">

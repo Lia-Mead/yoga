@@ -63,7 +63,29 @@ const ContactForm = () => {
 
     const { t } = useTranslation();
 
-    const onSubmit = (data) => console.log(data);
+    // const onSubmit = (data) => console.log(data);
+    const onSubmit = async (data) => {
+        try {
+            const response = await fetch("/contact_me.php", {
+                method: "POST",
+                port: 3001,
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                // Handle success
+                console.log("post ok");
+            } else {
+                // Handle error
+                console.log("post else");
+            }
+        } catch (error) {
+            // Handle network error
+        }
+    };
 
     console.log(watch("example"));
 

@@ -20,8 +20,8 @@ app.post("/send-email", async (req, res) => {
 
     // Email data
     const mailOptions = {
-        from: "your_email@gmail.com", // Sender's email address
-        to: "example@gmail.com", // Recipient's email address
+        from: "liatyoga@gmail.com", // Sender's email address
+        to: "liatyoga@gmail.com", // Recipient's email address
         subject: "New contact form submission",
         text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}`,
     };
@@ -35,6 +35,8 @@ app.post("/send-email", async (req, res) => {
         res.status(500).json({ message: "Failed to send email" });
     }
 });
+
+app.use(express.static("build"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
