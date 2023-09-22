@@ -14,14 +14,18 @@ const ContactForm = () => {
     // const onSubmit = (data) => console.log(data);
     const onSubmit = async (data) => {
         try {
-            const response = await fetch("/contact_me.php", {
-                method: "POST",
-                port: 3001,
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
+            const response = await fetch(
+                "https://yoga.liatmeadows/contact_me.php",
+                // "/contact_me.php",
+                {
+                    method: "POST",
+                    port: 3001,
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                }
+            );
 
             if (response.ok) {
                 // Handle success

@@ -36,8 +36,6 @@ function App() {
 
     const [hasScrolledToBottom, setHasScrolledToBottom] = useState(false);
 
-    // emailjs.init("YOUR_SENDGRID_USER_ID");
-
     useEffect(() => {
         window.addEventListener("scroll", handleScroll, { passive: true });
 
