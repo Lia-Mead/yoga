@@ -31,7 +31,7 @@ export default function Header({
     };
 
     const toggleBurgerMenu = () => {
-        console.log("burgerOpen");
+        // console.log("burgerOpen");
         setBurgerOpen(!burgerOpen);
     };
 
@@ -53,24 +53,8 @@ export default function Header({
 
     return (
         <>
-            {/* <header className={`header ${isHebrew ? 'rtl-text' : 'ltr-text'}`}> */}
             <header className="header">
-                {/* <header id="mainNav" className="header"> */}
                 <HeaderScroll />
-
-                {/* <NavBar
-                    t={t}
-                    setIsHebrew={setIsHebrew}
-                    isHebrew={isHebrew}
-                    setIsGerman={setIsGerman}
-                    setIsEnglish={setIsEnglish}
-                    toTop={toTop}
-                    toggleBurgerMenu={toggleBurgerMenu}
-                    burgerOpen={burgerOpen}
-                    setBurgerOpen={setBurgerOpen}
-                /> */}
-
-                {/* <div className="menu-left" role="menu"> */}
 
                 {screenSize < 900 || mQuery ? (
                     <div className="responsive-nav-con">
@@ -103,7 +87,6 @@ export default function Header({
                         toTop={toTop}
                     />
                 )}
-                {/* </div> */}
             </header>
 
             {burgerOpen ? (
@@ -116,6 +99,7 @@ export default function Header({
                     setIsEnglish={setIsEnglish}
                     isHebrew={isHebrew}
                     toTop={toTop}
+                    setBurgerOpen={setBurgerOpen}
                 />
             ) : null}
         </>

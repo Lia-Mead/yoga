@@ -41,7 +41,7 @@ export default function BurgerMenu({
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [setBurgerOpen]);
+    }, []);
 
     const location = useLocation();
 
@@ -105,7 +105,7 @@ export default function BurgerMenu({
 BurgerMenu.propTypes = {
     t: PropTypes.func.isRequired,
     toggleBurgerMenu: PropTypes.func.isRequired,
-    setBurgerOpen: PropTypes.func,
+    setBurgerOpen: PropTypes.func.isRequired,
     setIsHebrew: PropTypes.func.isRequired,
     setIsEnglish: PropTypes.func.isRequired,
     setIsGerman: PropTypes.func.isRequired,

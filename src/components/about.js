@@ -14,10 +14,13 @@ import Tichon from "../assets/images/tichon7.jpg";
 const About = ({ isHebrew, isGerman }) => {
     const { t } = useTranslation();
 
-    //   const isHebrew = i18n.language === 'he';
-
     return (
-        <section className="page-section" id="about" href="#about" name="about">
+        <section
+            className={`page-section ${isHebrew ? "rtl-text" : "ltr-text"}`}
+            id="about"
+            href="#about"
+            name="about"
+        >
             <div className={`container ${isHebrew ? "rtl-text" : "ltr-text"}`}>
                 <div className="text-center">
                     <h2 className="section-heading text-uppercase">
@@ -27,7 +30,7 @@ const About = ({ isHebrew, isGerman }) => {
                         {t("about_my_way")}
                     </h3>
                 </div>
-                <ul className="timeline">
+                <ul className={`timeline ${isHebrew ? "align-right" : ""}`}>
                     <li>
                         <div className="timeline-image">
                             <img
@@ -36,7 +39,11 @@ const About = ({ isHebrew, isGerman }) => {
                                 alt="head-stand-in-sunset"
                             />
                         </div>
-                        <div className="timeline-panel">
+                        <div
+                            className={`timeline-panel ${
+                                isHebrew ? "align-right" : ""
+                            }`}
+                        >
                             <div className="timeline-heading">
                                 <h4>{t("about_para_1_years")}</h4>
                                 <h4 className="subheading">
@@ -59,7 +66,11 @@ const About = ({ isHebrew, isGerman }) => {
                                 alt="head-stand-in-sunset"
                             />
                         </div>
-                        <div className="timeline-panel">
+                        <div
+                            className={`timeline-panel ${
+                                isHebrew ? "align-right" : ""
+                            }`}
+                        >
                             <div className="timeline-heading">
                                 <h4>{t("about_para_2_years")}</h4>
                                 <h4 className="subheading">
@@ -82,7 +93,11 @@ const About = ({ isHebrew, isGerman }) => {
                                 alt="standing-pose-leg-to-head"
                             />
                         </div>
-                        <div className="timeline-panel">
+                        <div
+                            className={`timeline-panel ${
+                                isHebrew ? "align-right" : ""
+                            }`}
+                        >
                             <div className="timeline-heading">
                                 <h4>{t("about_para_3_years")}</h4>
                                 <h4 className="subheading">
@@ -105,7 +120,11 @@ const About = ({ isHebrew, isGerman }) => {
                                 alt="youth-in-tichon-hadash-practicing-yoga"
                             />
                         </div>
-                        <div className="timeline-panel">
+                        <div
+                            className={`timeline-panel ${
+                                isHebrew ? "align-right" : ""
+                            }`}
+                        >
                             <div className="timeline-heading">
                                 <h4>{t("about_para_4_years")}</h4>
                                 <h4 className="subheading">
@@ -128,7 +147,11 @@ const About = ({ isHebrew, isGerman }) => {
                                 alt="liat-meadows"
                             />
                         </div>
-                        <div className="timeline-panel">
+                        <div
+                            className={`timeline-panel ${
+                                isHebrew ? "align-right" : ""
+                            }`}
+                        >
                             <div className="timeline-heading">
                                 <h4>{t("about_para_5_years")}</h4>
                                 <h4 className="subheading">

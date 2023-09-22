@@ -1,18 +1,20 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-// Create a context
 const LanguageContext = createContext();
 
-// Create a provider component
 export const LanguageProvider = ({ children }) => {
-    const [currentLanguage, setCurrentLanguage] = useState("en");
+    // const [currentLanguage, setCurrentLanguage] = useState("en");
+    const [currentLanguage, setCurrentLanguage] = useState(
+        localStorage.getItem("selectedLanguage") || "en"
+    );
 
     const switchLanguage = (newLanguage) => {
         setCurrentLanguage(newLanguage);
     };
 
     useEffect(() => {
+        console.log("language", currentLanguage);
         localStorage.setItem("language", currentLanguage);
     }, [currentLanguage]);
 

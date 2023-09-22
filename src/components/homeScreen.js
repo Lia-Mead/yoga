@@ -1,16 +1,20 @@
+// import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 
 import About from "./about";
-
 import backgroundImageStage from "../assets/images/header-bg.jpg";
-
 import "../styles/homeScreen.scss";
 
 const HomeScreen = ({ toTop }) => {
     const { t, i18n } = useTranslation();
     const isHebrew = i18n.language === "he";
     const isGerman = i18n.language === "de";
+
+    // useEffect(() => {
+    //     const savedLanguage = localStorage.getItem("selectedLanguage");
+    //     console.log("savedLanguage", savedLanguage);
+    // }, []);
 
     return (
         <div

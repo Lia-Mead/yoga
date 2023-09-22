@@ -90,12 +90,9 @@ const LanguageSwitch = ({ setIsHebrew, setIsEnglish, setIsGerman }) => {
 };
 
 LanguageSwitch.propTypes = {
-    setIsHebrew: PropTypes.func,
-    setIsGerman: PropTypes.func,
-    setIsEnglish: PropTypes.func,
-    // setIsHebrew: PropTypes.func.isRequired,
-    // setIsGerman: PropTypes.func.isRequired,
-    // setIsEnglish: PropTypes.func.isRequired,
+    setIsHebrew: PropTypes.func.isRequired,
+    setIsGerman: PropTypes.func.isRequired,
+    setIsEnglish: PropTypes.func.isRequired,
 };
 
 export default LanguageSwitch;
