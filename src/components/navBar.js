@@ -2,10 +2,10 @@ import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
 
 import LanguageSwitch from "../components/LanguageSwitch";
 
-import { Nav, NavLink } from "../components/navElements";
 import Logo from "../components/logo";
 
 import "../styles/navBar.scss";
@@ -19,35 +19,6 @@ const Navbar = ({ toTop }) => {
     const isHebrew = i18n.language === "he";
 
     return (
-        // <div id="mainNav" className="nav-con">
-        //     <Nav
-        //         className="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink"
-        //         role="menu"
-        //     >
-        //         <Link to="/" onClick={toTop}>
-        //             <Logo />
-        //         </Link>
-
-        //         <div
-        //             className={`nav-menu ${isHebrew ? "rtl-text" : "ltr-text"}`}
-        //         >
-        //             {isHomePage ? (
-        //                 <ScrollLink to="about" smooth="true" duration={500}>
-        //                     {t("nav_about")}
-        //                 </ScrollLink>
-        //             ) : (
-        //                 <NavLink to="/" smooth="true" duration={500}>
-        //                     {t("nav_home")}
-        //                 </NavLink>
-        //             )}
-
-        //             <NavLink to="/contact">{t("nav_contact")}</NavLink>
-        //         </div>
-
-        //         <LanguageSwitch />
-        //     </Nav>
-        // </div>
-
         <div id="mainNav" className="nav-con">
             <Link to="/" onClick={toTop}>
                 <Logo />
