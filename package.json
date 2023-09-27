@@ -4,6 +4,7 @@
     "homepage": "https://www.yoga.liatmeadows.com",
     "private": true,
     "dependencies": {
+        "@axe-core/react": "^4.7.3",
         "@sendgrid/mail": "^7.7.0",
         "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^13.4.0",

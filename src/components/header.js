@@ -3,24 +3,14 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import NavBar from "./navBar";
-// import Nav from "./nav";
 import BurgerMenu from "./burgerMenu";
-// import LanguageSwitch from '../components/LanguageSwitch';
-// import { useLanguage } from '../components/LanguageContext';
 import HeaderScroll from "./headerScroll";
 
 import close from "../assets/icons/close.svg";
 import burger from "../assets/icons/burger.svg";
 import Logo from "../components/logo";
 
-export default function Header({
-    t,
-    setIsHebrew,
-    isHebrew,
-    setIsGerman,
-    setIsEnglish,
-    toTop,
-}) {
+export default function Header({ toTop }) {
     const [burgerOpen, setBurgerOpen] = useState(false);
     const [mQuery, setMQuery] = useState();
     const [screenSize, setScreenSize] = useState(window.innerWidth);
@@ -31,7 +21,6 @@ export default function Header({
     };
 
     const toggleBurgerMenu = () => {
-        // console.log("burgerOpen");
         setBurgerOpen(!burgerOpen);
     };
 
@@ -40,7 +29,7 @@ export default function Header({
 
     useEffect(() => {
         if (screenSize < 900) {
-            console.log("screenSize", screenSize);
+            // console.log("screenSize", screenSize);
             setBurgerOpen(false);
             // add class justify-content: space-between; header
         }
@@ -57,7 +46,7 @@ export default function Header({
                 <HeaderScroll />
 
                 {screenSize < 900 || mQuery ? (
-                    <div className="responsive-nav-con">
+                    <div className="responsive-nav-con" role="group">
                         <Link to="/" onClick={toTop}>
                             <Logo />
                         </Link>
@@ -72,34 +61,23 @@ export default function Header({
                                 }
                             }}
                             // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
-                            role="menu"
+                            role="button"
                             aria-labelledby="menubutton"
+                            aria-label="Toggle Menu"
                             tabIndex="0"
                         />
                     </div>
                 ) : (
-                    <NavBar
-                        t={t}
-                        setIsHebrew={setIsHebrew}
-                        isHebrew={isHebrew}
-                        setIsGerman={setIsGerman}
-                        setIsEnglish={setIsEnglish}
-                        toTop={toTop}
-                    />
+                    <NavBar toTop={toTop} />
                 )}
             </header>
 
             {burgerOpen ? (
                 <BurgerMenu
-                    t={t}
-                    toggleBurgerMenu={toggleBurgerMenu}
                     burgerOpen={burgerOpen}
-                    setIsHebrew={setIsHebrew}
-                    setIsGerman={setIsGerman}
-                    setIsEnglish={setIsEnglish}
-                    isHebrew={isHebrew}
-                    toTop={toTop}
                     setBurgerOpen={setBurgerOpen}
+                    toggleBurgerMenu={toggleBurgerMenu}
+                    toTop={toTop}
                 />
             ) : null}
         </>
@@ -107,10 +85,5 @@ export default function Header({
 }
 
 Header.propTypes = {
-    t: PropTypes.func.isRequired,
-    setIsHebrew: PropTypes.func.isRequired,
-    setIsGerman: PropTypes.func.isRequired,
-    setIsEnglish: PropTypes.func.isRequired,
     toTop: PropTypes.func.isRequired,
-    isHebrew: PropTypes.bool.isRequired,
 };

@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-import PropTypes from "prop-types";
 import { withTranslation } from "react-i18next";
 import { useTranslation } from "react-i18next";
 
@@ -11,8 +10,10 @@ import Ashram from "../assets/images/ashram.jpg";
 import Pada from "../assets/images/padangusta.jpg";
 import Tichon from "../assets/images/tichon7.jpg";
 
-const About = ({ isHebrew, isGerman }) => {
-    const { t } = useTranslation();
+const About = () => {
+    const { t, i18n } = useTranslation();
+    const isHebrew = i18n.language === "he";
+    const isGerman = i18n.language === "de";
 
     return (
         <section
@@ -181,12 +182,6 @@ const About = ({ isHebrew, isGerman }) => {
             </div>
         </section>
     );
-};
-
-About.propTypes = {
-    t: PropTypes.func.isRequired,
-    isHebrew: PropTypes.bool,
-    isGerman: PropTypes.bool,
 };
 
 export default withTranslation()(About);

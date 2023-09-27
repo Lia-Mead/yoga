@@ -1,29 +1,23 @@
 import { useRef, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import PropTypes from "prop-types";
 import { Link as ScrollLink } from "react-scroll";
 
 import LanguageSwitch from "../components/LanguageSwitch";
 
-export default function BurgerMenu({
-    t,
-    toggleBurgerMenu,
-    setBurgerOpen,
-    setIsHebrew,
-    setIsGerman,
-    setIsEnglish,
-    isHebrew,
-    toTop,
-}) {
+export default function BurgerMenu({ toggleBurgerMenu, setBurgerOpen, toTop }) {
     const menuRef = useRef(null);
 
-    // console.log('ishebrew burgermenu', isHebrew);
+    const { t, i18n } = useTranslation();
 
-    const handleMenuClick = (event) => {
-        // Stop propagation to prevent closing when clicking inside the menu.
-        event.stopPropagation();
-    };
+    const isHebrew = i18n.language === "he";
+
+    // const handleMenuClick = (event) => {
+    //     // Stop propagation to prevent closing when clicking inside the menu.
+    //     event.stopPropagation();
+    // };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -51,64 +45,58 @@ export default function BurgerMenu({
         <nav
             ref={menuRef}
             className={`open-nav ${isHebrew ? "rtl-text" : "ltr-text"}`}
-            onClick={handleMenuClick}
-            onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                    handleMenuClick();
-                }
-            }}
-            // role="menu"
-            // aria-labelledby="menubutton"
-            // tabIndex="0"
+            role="navigation"
+            aria-label="Main navigation"
+            id="primary-nav"
         >
-            {isHomePage ? (
-                <ScrollLink
-                    to="about"
-                    smooth="true"
-                    duration={500}
-                    onClick={toggleBurgerMenu}
-                >
-                    {t("nav_about")}
-                </ScrollLink>
-            ) : (
-                <NavLink
-                    to="/"
-                    smooth="true"
-                    duration={500}
-                    onClick={toggleBurgerMenu}
-                >
-                    {t("nav_home")}
-                </NavLink>
-            )}
+            <ul>
+                {isHomePage ? (
+                    <ScrollLink
+                        to="about"
+                        smooth="true"
+                        duration={500}
+                        onClick={toggleBurgerMenu}
+                        // activeClassName="active-b"
+                        role="button"
+                    >
+                        {t("nav_about")}
+                    </ScrollLink>
+                ) : (
+                    <NavLink
+                        to="/"
+                        smooth="true"
+                        duration={500}
+                        onClick={toggleBurgerMenu}
+                        // activeClassName="active-b"
+                        role="button"
+                    >
+                        {t("nav_home")}
+                    </NavLink>
+                )}
 
-            <NavLink
-                className="nav-icon"
-                // activeClassName="active-b"
-                onClick={() => {
-                    toggleBurgerMenu();
-                    toTop();
-                }}
-                to="/contact"
-            >
-                {t("nav_contact")}
-            </NavLink>
+                <li>
+                    <NavLink
+                        className="nav-icon"
+                        // activeClassName="active-b"
+                        onClick={() => {
+                            toggleBurgerMenu();
+                            toTop();
+                        }}
+                        to="/contact"
+                        role="button"
+                    >
+                        {t("nav_contact")}
+                    </NavLink>
+                </li>
+            </ul>
 
-            <LanguageSwitch
-                setIsHebrew={setIsHebrew}
-                setIsGerman={setIsGerman}
-                setIsEnglish={setIsEnglish}
-            />
+            <LanguageSwitch />
         </nav>
     );
 }
 
 BurgerMenu.propTypes = {
-    t: PropTypes.func.isRequired,
     toggleBurgerMenu: PropTypes.func.isRequired,
     setBurgerOpen: PropTypes.func.isRequired,
-    setIsHebrew: PropTypes.func.isRequired,
-    setIsEnglish: PropTypes.func.isRequired,
-    setIsGerman: PropTypes.func.isRequired,
-    isHebrew: PropTypes.bool.isRequired,
     toTop: PropTypes.func,
 };

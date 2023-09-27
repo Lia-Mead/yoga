@@ -1,4 +1,3 @@
-// import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 
@@ -9,12 +8,6 @@ import "../styles/homeScreen.scss";
 const HomeScreen = ({ toTop }) => {
     const { t, i18n } = useTranslation();
     const isHebrew = i18n.language === "he";
-    const isGerman = i18n.language === "de";
-
-    // useEffect(() => {
-    //     const savedLanguage = localStorage.getItem("selectedLanguage");
-    //     console.log("savedLanguage", savedLanguage);
-    // }, []);
 
     return (
         <div
@@ -30,7 +23,7 @@ const HomeScreen = ({ toTop }) => {
                         {t("home_yoga")}
                         {t("with_liat")}
                     </h1>
-                    <h3>{t("yoga_classes_and_retreats")}</h3>
+                    <h2>{t("yoga_classes_and_retreats")}</h2>
                 </div>
             </div>
 
@@ -38,12 +31,7 @@ const HomeScreen = ({ toTop }) => {
                 <h3 className="animate-character">{t("home_slogan")}</h3>
             </div>
 
-            <About
-                t={t}
-                isHebrew={isHebrew}
-                isGerman={isGerman}
-                onClick={toTop}
-            />
+            <About onClick={toTop} />
         </div>
     );
 };

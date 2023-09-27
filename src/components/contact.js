@@ -1,6 +1,4 @@
 /* eslint-disable no-undef */
-import PropTypes from "prop-types";
-import { withTranslation } from "react-i18next";
 import { useTranslation } from "react-i18next";
 // import ContactForm from "./contactForm";
 
@@ -8,8 +6,9 @@ import backgroundImageContact from "../assets/images/warrier.jpg";
 
 import "../styles/contact.scss";
 
-const Contact = ({ isHebrew }) => {
-    const { t } = useTranslation();
+const Contact = () => {
+    const { t, i18n } = useTranslation();
+    const isHebrew = i18n.language === "he";
 
     return (
         <section
@@ -49,9 +48,4 @@ const Contact = ({ isHebrew }) => {
     );
 };
 
-Contact.propTypes = {
-    t: PropTypes.func.isRequired,
-    isHebrew: PropTypes.bool,
-};
-
-export default withTranslation()(Contact);
+export default Contact;

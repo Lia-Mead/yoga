@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
-const Footer = ({ t, isHebrew }) => {
+const Footer = () => {
+    const { t, i18n } = useTranslation();
+    const isHebrew = i18n.language === "he";
+
     return (
         <footer className="footer">
             <div className="footer-box first">
@@ -35,11 +38,6 @@ const Footer = ({ t, isHebrew }) => {
             </div>
         </footer>
     );
-};
-
-Footer.propTypes = {
-    t: PropTypes.func.isRequired,
-    isHebrew: PropTypes.bool.isRequired,
 };
 
 export default Footer;

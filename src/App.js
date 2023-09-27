@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { I18nextProvider } from "react-i18next";
 
 // import ContactForm from "./ContactForm";
 // import * as emailjs from "emailjs-com";
 
-// import './nagishli.js';
-import i18n from "./i18n/i18n";
+// import i18n from "./i18n/i18n";
 // import { LanguageProvider, useLanguage } from './components/LanguageContext';
-import { LanguageProvider } from "./components/LanguageContext";
+// import { LanguageProvider } from "./components/LanguageContext";
 
 import { useTranslation } from "react-i18next";
 import ScrollToTop from "./components/scrollToTop";
@@ -23,11 +21,22 @@ import OpenSource from "./components/Terms/openSource";
 import "./styles/App.scss";
 
 function App() {
-    const { t } = useTranslation();
-    const [isHebrew, setIsHebrew] = useState(false);
-    const [isGerman, setIsGerman] = useState(false);
-    const [isEnglish, setIsEnglish] = useState(false);
+    const { t, i18n } = useTranslation();
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const ReactDOM = require("react-dom");
+
+    if (process.env.NODE_ENV !== "production") {
+        const axe = require("@axe-core/react");
+        axe(React, ReactDOM, 1000);
+    }
+
+    const isHebrew = i18n.language === "he";
+
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem("selectedLanguage");
+        i18n.changeLanguage(savedLanguage);
+    }, [i18n]);
 
     const [hasScrolledToBottom, setHasScrolledToBottom] = useState(false);
 
@@ -84,64 +93,46 @@ function App() {
     // }, []);
 
     return (
-        <I18nextProvider i18n={i18n}>
-            <LanguageProvider>
-                <Router>
-                    <ScrollToTop />
-                    <div className="wrapper">
-                        <Header
-                            t={t}
-                            isHebrew={isHebrew}
-                            setIsHebrew={setIsHebrew}
-                            setIsGerman={setIsGerman}
-                            setIsEnglish={setIsEnglish}
-                            toTop={toTop}
+        <Router>
+            <ScrollToTop />
+            <div className="wrapper">
+                <Header t={t} toTop={toTop} />
+                <main
+                    id="container"
+                    className={`main-content ${
+                        isScrolled ? "is-scrolled" : ""
+                    } ${isHebrew ? "rtl-text" : "ltr-text"}`}
+                    onScroll={handleScroll}
+                >
+                    <Routes>
+                        <Route path="/" exact element={<HomeScreen />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/imprint" element={<Imprint />} />
+                        <Route path="/open-source" element={<OpenSource />} />
+                        <Route
+                            path="/accessibility-statement"
+                            element={<AccessibilityStatement />}
                         />
-                        <main
-                            id="container"
-                            className={`main-content ${
-                                isScrolled ? "is-scrolled" : ""
-                            } ${isHebrew ? "rtl-text" : "ltr-text"}`}
-                            onScroll={handleScroll}
+                        {/* <Route path="/contact" component={ContactForm} /> */}
+                    </Routes>
+
+                    {isScrolled && (
+                        <button
+                            className="top"
+                            onClick={() => {
+                                toTop();
+                            }}
                         >
-                            <Routes>
-                                <Route
-                                    path="/"
-                                    exact
-                                    element={<HomeScreen />}
-                                />
-                                <Route path="/contact" element={<Contact />} />
-                                <Route path="/imprint" element={<Imprint />} />
-                                <Route
-                                    path="/open-source"
-                                    element={<OpenSource />}
-                                />
-                                <Route
-                                    path="/accessibility-statement"
-                                    element={<AccessibilityStatement />}
-                                />
-                                {/* <Route path="/contact" component={ContactForm} /> */}
-                            </Routes>
+                            {t("button_up")}
+                        </button>
+                    )}
+                </main>
 
-                            {isScrolled && (
-                                <button
-                                    className="top"
-                                    onClick={() => {
-                                        toTop();
-                                    }}
-                                >
-                                    {t("button_up")}
-                                </button>
-                            )}
-                        </main>
-
-                        {hasScrolledToBottom ? (
-                            <Footer t={t} isHebrew={isHebrew} />
-                        ) : null}
-                    </div>
-                </Router>
-            </LanguageProvider>
-        </I18nextProvider>
+                {hasScrolledToBottom ? (
+                    <Footer t={t} isHebrew={isHebrew} />
+                ) : null}
+            </div>
+        </Router>
     );
 }
 
