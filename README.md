@@ -1,3 +1,3 @@
 # yoga
 
-Liat Meadows Hatha Vinyasa Instructor
+Hatha Vinyasa Instructor
