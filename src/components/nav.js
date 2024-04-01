@@ -39,7 +39,7 @@ const Nav = () => {
                                     className="nav-link js-scroll-trigger"
                                     href="#services"
                                 >
-                                    Yoga With Liat
+                                    Yoga With Lia
                                 </a>
                             </li>
                             <li className="nav-item">
